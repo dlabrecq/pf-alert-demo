@@ -1,7 +1,7 @@
 {
-  "name": "pf-tabs-demo",
+  "name": "pf-alert-modules-demo",
   "version": "1.0.0",
-  "description": "A simple tabs component for our review of web components",
+  "description": "pf-alert es6 modules demo",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,10 +22,12 @@
     "gulp-rename": "~1.2.2",
     "gulp-uglify": "~2.0.0",
     "gulp-vulcanize": "~6.1.0",
-    "gulp-watch": "^4.3.9"
+    "gulp-watch": "^4.3.9",
+    "webpack": "~1.13.2",
+    "webpack-stream": "~3.2.0"
   },
   "dependencies": {
-    "patternfly": "^3.10.0",
+    "patternfly": "~3.10.0",
     "webcomponents.js": "^0.7.22"
   }
 }
