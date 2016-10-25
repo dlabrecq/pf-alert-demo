@@ -1,10 +1,11 @@
 var gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
+  webpack = require('webpack-stream'),
   $ = require('gulp-load-plugins')();
 
 gulp.task('js', function () {
   return gulp.src([
-    'src/pf-tabs.js'
+    'src/*.js'
   ])
     .pipe($.plumber())
     .pipe($.babel(
@@ -15,8 +16,11 @@ gulp.task('js', function () {
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/pf-tabs.html')
-    .pipe($.rename('pf-tabs.local.html'))
+  return gulp.src([
+    'src/pf.html',
+    'src/pf-alert.html',
+    'src/pf-icon.html'])
+    //.pipe($.rename('pf-all.local.html'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -30,10 +34,20 @@ gulp.task('css', function () {
 });
 
 gulp.task('vulcanize', ['html'], function () {
-  return gulp.src('dist/pf-tabs.local.html')
+  return gulp.src([
+    'dist/pf.html',
+    'dist/pf-alert.html',
+    'dist/pf-icon.html'])
     .pipe($.vulcanize({dest: 'dist', inlineScripts: true, inlineCss: true}))
-    .pipe($.rename('pf-tabs.html'))
+    //.pipe($.rename('pf-all.html'))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('webpack', function() {
+  return gulp.src(['dist/pf-alert.js', 'dist/pf-icon.js', 'dist/pf-alert-tmpl.js'])
+    .pipe(webpack())
+    .pipe($.rename('pf.js'))
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('img', function(){
@@ -53,7 +67,7 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['js', 'html', 'css', 'copy', 'img', 'fonts', 'vulcanize']);
+gulp.task('build', ['js', 'html', 'css', 'copy', 'img', 'fonts', 'vulcanize', 'webpack']);
 
 gulp.task('serve', function(){
   browserSync.init({

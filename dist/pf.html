@@ -1,0 +1,56 @@
+<!-- Testing vulcanize --><html><head><meta charset="UTF-8"><!-- link rel="import" href="pf-icon.html" -->
+
+
+</head><body><div hidden="" by-vulcanize=""><template class="pf-icon-danger-template">
+  <span class="pficon pficon-error-circle-o"></span>
+</template>
+
+<!-- Info Template -->
+<template class="pf-icon-info-template">
+  <span class="pficon pficon-info"></span>
+</template>
+
+<!-- Success Template -->
+<template class="pf-icon-success-template">
+  <span class="pficon pficon-ok"></span>
+</template>
+
+<!-- Warning Template -->
+<template class="pf-icon-warning-template">
+  <span class="pficon pficon-warning-triangle-o"></span>
+</template>
+<style>
+  pf-alert {
+    display: block;
+  }
+  pf-alert.alert .pficon {
+    font-size: 22px;
+    position: absolute;
+    left: 13px;
+    top: 10px;
+  }
+</style>
+
+<!-- Danger Template -->
+<template class="pf-alert-danger-template">
+  <pf-icon type="danger"></pf-icon>
+</template>
+
+<!-- Info Template -->
+<template class="pf-alert-info-template">
+  <pf-icon type="info"></pf-icon>
+</template>
+
+<!-- Success Template -->
+<template class="pf-alert-success-template">
+  <pf-icon type="success"></pf-icon>
+</template>
+
+<!-- Warning Template -->
+<template class="pf-alert-warning-template">
+  <pf-icon type="warning"></pf-icon>
+</template>
+<script>
+  // This needs to be in the same doc as the templates
+  var doc = (document._currentScript || document.currentScript).ownerDocument;
+</script></div></body></html>

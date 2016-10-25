@@ -1,21 +1,35 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Basic Pf-Tabs Demo</title>
-        <script src="dist/webcomponents.js"></script>
-
-        <link rel="stylesheet" href="dist/css/patternfly.css">
-        <link rel="stylesheet" href="dist/css/patternfly-additions.css">
-        <link rel="import" href="dist/pf-tabs.html">
-    </head>
-    <body>
-        <pf-tabs>
-            <pf-tab title="Tab1" active="true">
-                <p>Tab1 content here</p>
-            </pf-tab>
-            <pf-tab title="Tab2">
-                <p>Tab2 content here</p>
-            </pf-tab>
-        </pf-tabs>
-    </body>
+<head>
+  <title>Demo: pf-alert combo demo</title>
+  <script src="dist/webcomponents.js"></script>
+  <link rel="stylesheet" href="dist/css/patternfly.css">
+  <link rel="stylesheet" href="dist/css/patternfly-additions.css">
+  <link rel="import" href="dist/pf.html">
+  <script src="dist/pf.js"></script>
+</head>
+  <div class="container">
+    <div class="page-header">
+      <h1>Alerts</h1>
+    </div>
+    <pf-alert type="warning">
+      These examples are included for development testing purposes. For official documentation, see
+      <a href="https://www.patternfly.org" class="alert-link">https://www.patternfly.org</a> and
+      <a href="http://getbootstrap.com" class="alert-link">http://getbootstrap.com</a>
+    </pf-alert>
+    <hr>
+    <pf-alert type="danger">
+      <strong>Hey there is a problem!</strong> Yeah this is really messed up and you should <a href="#" class="alert-link">know about it</a>.
+    </pf-alert>
+    <pf-alert type="warning">
+      <strong>There might be a problem here!</strong> We are not really sure, but <a href="#" class="alert-link">it might be bad</a>.
+    </pf-alert>
+    <pf-alert type="success">
+      <strong>Great job!</strong> This is really working out <a href="#" class="alert-link">great for us</a>.
+    </pf-alert>
+    <pf-alert type="info">
+      <strong>This is some general information.</strong> You should <a href="#" class="alert-link">know about this</a>.
+    </pf-alert>
+  </div>
+</body>
 </html>
