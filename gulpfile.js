@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('js', function () {
   return gulp.src([
-    'src/pf-tabs.js'
+    'src/*.js'
   ])
     .pipe($.plumber())
     .pipe($.babel(
@@ -15,8 +15,10 @@ gulp.task('js', function () {
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/pf-tabs.html')
-    .pipe($.rename('pf-tabs.local.html'))
+  return gulp.src([
+    'src/pf-alert.html',
+    'src/pf-icon.html'])
+    //.pipe($.rename('pf-all.local.html'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -30,9 +32,11 @@ gulp.task('css', function () {
 });
 
 gulp.task('vulcanize', ['html'], function () {
-  return gulp.src('dist/pf-tabs.local.html')
+  return gulp.src([
+    'dist/pf-alert.html',
+    'dist/pf-icon.html'])
     .pipe($.vulcanize({dest: 'dist', inlineScripts: true, inlineCss: true}))
-    .pipe($.rename('pf-tabs.html'))
+    //.pipe($.rename('pf-all.html'))
     .pipe(gulp.dest('dist'));
 });
 
